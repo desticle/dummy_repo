@@ -7,8 +7,8 @@ Make sure you make a PR to your own repo's main and not the class' repo!! Otherw
 *   **Lab Partner(s):** N/A
 
 ## GitHub Pages Links
-- Expose: [Link to your deployed expose.html]
-- Explore: [Link to your deployed explore.html]
+- Expose: [https://chencheng-li.github.io/Lab5_Starter/expose.html]
+- Explore: [https://chencheng-li.github.io/Lab5_Starter/explore.html]
 
 ## Check Your Understanding - Unit Testing
 
