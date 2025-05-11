@@ -25,7 +25,7 @@ jobs:
       - name: Convert README to index.html
         run: |
           mkdir -p public
-          npx markdown-to-html README.md > public/index.html
+          npx marked README.md > public/index.html
       - name: Copy other HTML pages
         run: cp *.html public/
       - name: Deploy to GitHub Pages
