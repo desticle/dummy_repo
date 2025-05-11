@@ -3,4 +3,4 @@
 
 [explore](explore.html)
 
-[docs][docs/index.html]
+[docs](docs/index.html)
