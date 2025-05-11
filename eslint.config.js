@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import globals from 'globals';
 import markdown from '@eslint/markdown';
 import css from '@eslint/css';
+import jsdoc from 'eslint-plugin-jsdoc';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
@@ -10,13 +11,18 @@ export default defineConfig([
   },
   {
     files: ['**/*.{js,mjs,cjs}'],
-    plugins: { js },
+    plugins: { js, jsdoc },
     extends: ['js/recommended'],
     rules: {
       'no-undef': ['warn'],
       'no-unused-vars': ['warn'],
       semi: ['error', 'always'],
       'space-infix-ops': ['error', { int32Hint: false }],
+      'jsdoc/require-description': 'warn',
+      'jsdoc/require-param': 'error',
+      'jsdoc/require-param-type': 'error',
+      'jsdoc/require-returns': 'error',
+      'jsdoc/require-returns-type': 'error',
     },
   },
   {

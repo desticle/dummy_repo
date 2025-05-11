@@ -2,6 +2,10 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
+/**
+ *
+ *
+ */
 function init() {
   // Get the dropdown menu (for selecting horn type)
   const hornSelect = document.getElementById('horn-select');

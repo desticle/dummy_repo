@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  lint:
+  lint-:
     name: Lint with ESLint and Prettier
     runs-on: ubuntu-latest
     steps:
@@ -19,6 +19,9 @@ jobs:
         run: npm run lint
       - name: Run Prettier check
         run: npm run format -- --check
+      - name: Generate JSDoc
+        if: success()
+        run: npx jsdoc -c jsdoc.json
 
   validate-html:
     name: Validate HTML
