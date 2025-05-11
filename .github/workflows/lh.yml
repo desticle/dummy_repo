@@ -20,7 +20,7 @@ jobs:
           urls: |
             https://cse110-sp25-group13.github.io/dummy_repo/
             https://cse110-sp25-group13.github.io/dummy_repo/expose.html
-            https://cse110-sp25-group13.github.io/dummy_repo/exlore.html
+            https://cse110-sp25-group13.github.io/dummy_repo/explore.html
           budgetPath: ./budget.json
           uploadArtifacts: true
           temporaryPublicStorage: true
