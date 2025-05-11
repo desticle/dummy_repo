@@ -24,7 +24,6 @@
     "verbose": true
   },
   "dependencies": {
-    "eslint-plugin-jest": "^28.11.0",
-    "marked": "^15.0.11"
+    "eslint-plugin-jest": "^28.11.0"
   }
 }
