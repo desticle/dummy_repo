@@ -26,7 +26,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs # Deploy from the repo root
+          publish_dir: . # Deploy from the repo root
 
   validate-html:
     name: Validate HTML
