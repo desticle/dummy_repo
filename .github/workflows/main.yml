@@ -28,7 +28,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
           destination_dir: docs
-          keep_files: true
 
   validate-html:
     name: Validate HTML
