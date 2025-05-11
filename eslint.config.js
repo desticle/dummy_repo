@@ -6,6 +6,9 @@ import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   {
+    ignores: ["assets/scripts/js-confetti.browser.js"], // 👈 skip this file
+  },
+  {
     files: ["**/*.{js,mjs,cjs}"],
     plugins: { js },
     extends: ["js/recommended"],

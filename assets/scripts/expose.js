@@ -64,7 +64,7 @@ function init() {
       iconPath += 'volume-level-3.svg';
     }
     volumeIcon.src = iconPath;
-    volumeIcon.alt = `Volume level ${Math.ceil(volumeValue / 33) -1 < 0 ? 0 : Math.ceil(volumeValue / 33) -1}`; // Generate appropriate alt text
+    volumeIcon.alt = `Volume level ${Math.ceil(volumeValue / 33) - 1 < 0 ? 0 : Math.ceil(volumeValue / 33) - 1}`; // Generate appropriate alt text
 
     // Update audio element volume (slider is 0-100, audio.volume is 0.0-1.0)
     audioElement.volume = volumeValue / 100;
