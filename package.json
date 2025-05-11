@@ -13,7 +13,9 @@
     "prettier": "^3.5.3"
   },
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "type": "module",
   "jest": {

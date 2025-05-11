@@ -1,30 +1,30 @@
-import js from "@eslint/js";
-import globals from "globals";
-import markdown from "@eslint/markdown";
-import css from "@eslint/css";
-import { defineConfig } from "eslint/config";
+import js from '@eslint/js';
+import globals from 'globals';
+import markdown from '@eslint/markdown';
+import css from '@eslint/css';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   {
-    ignores: ["assets/scripts/js-confetti.browser.js"], // 👈 skip this file
+    ignores: ['assets/scripts/js-confetti.browser.js'], // 👈 skip this file
   },
   {
-    files: ["**/*.{js,mjs,cjs}"],
+    files: ['**/*.{js,mjs,cjs}'],
     plugins: { js },
-    extends: ["js/recommended"],
+    extends: ['js/recommended'],
     rules: {
-      "no-undef": ["warn"],
-      "no-unused-vars": ["warn"],
-      semi: ["error", "always"],
-      "space-infix-ops": ["error", { int32Hint: false }],
+      'no-undef': ['warn'],
+      'no-unused-vars': ['warn'],
+      semi: ['error', 'always'],
+      'space-infix-ops': ['error', { int32Hint: false }],
     },
   },
   {
-    files: ["**/*.{js,mjs,cjs}"],
+    files: ['**/*.{js,mjs,cjs}'],
     languageOptions: { globals: globals.browser },
   },
   {
-    files: ["**/__tests__/**/*.{js,mjs,cjs}", "**/*.test.{js,mjs,cjs}"],
+    files: ['**/__tests__/**/*.{js,mjs,cjs}', '**/*.test.{js,mjs,cjs}'],
     languageOptions: {
       globals: {
         ...globals.jest,
@@ -32,9 +32,9 @@ export default defineConfig([
     },
   },
   {
-    files: ["**/*.css"],
+    files: ['**/*.css'],
     plugins: { css },
-    language: "css/css",
-    extends: ["css/recommended"],
+    language: 'css/css',
+    extends: ['css/recommended'],
   },
 ]);

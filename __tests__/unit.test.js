@@ -69,7 +69,6 @@ describe('isPhoneNumber', () => {
   });
 });
 
-
 // --- isEmail ---
 describe('isEmail', () => {
   // True cases
@@ -138,7 +137,6 @@ describe('isStrongPassword', () => {
     expect(isStrongPassword('Inv@lidChar')).toBe(false); // Contains @
   });
 });
-
 
 // --- isDate ---
 // Regex: /^\d{1,2}\/\d{1,2}\/\d{4}$/

@@ -10,7 +10,8 @@ body {
   justify-items: center;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
 }
@@ -21,7 +22,7 @@ h2 {
   text-align: center;
 }
 
-body>header {
+body > header {
   display: grid;
   height: 20px;
   justify-items: end;
@@ -31,7 +32,7 @@ body>header {
   width: 100%;
 }
 
-body>header a {
+body > header a {
   border-bottom: 2px solid rgb(155, 155, 155);
   color: rgb(155, 155, 155);
   font-size: 1.4rem;
@@ -39,11 +40,11 @@ body>header a {
   text-decoration: none;
 }
 
-body>header a:hover {
+body > header a:hover {
   border-bottom: 2px solid transparent;
 }
 
-main>section {
+main > section {
   display: grid;
   max-width: 400px;
   row-gap: 20px;
@@ -59,7 +60,8 @@ main>section {
   max-width: 425px;
 }
 
-#explore button, #explore select {
+#explore button,
+#explore select {
   height: 30px;
   width: 425px;
 }

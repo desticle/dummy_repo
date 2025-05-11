@@ -28,7 +28,7 @@ function init() {
   // TODO: Add event listeners and handling logic
 
   // Add 'change' event listener for the horn selection dropdown
-  hornSelect.addEventListener('change', function() {
+  hornSelect.addEventListener('change', function () {
     const selectedHorn = hornSelect.value; // Get the currently selected horn value
 
     // Update image and audio based on selection
@@ -49,7 +49,7 @@ function init() {
 
   // Implement volume slider functionality
   // Add 'input' event listener for the volume slider
-  volumeSlider.addEventListener('input', function() {
+  volumeSlider.addEventListener('input', function () {
     const volumeValue = parseInt(volumeSlider.value); // Get slider value (0-100)
     let iconPath = 'assets/icons/';
 
@@ -72,7 +72,7 @@ function init() {
 
   // Implement play sound button functionality
   // Add 'click' event listener for the play sound button
-  playButton.addEventListener('click', function() {
+  playButton.addEventListener('click', function () {
     // Ensure a horn is selected and audio source is set
     if (audioElement.src && hornSelect.value !== 'select') {
       audioElement.play(); // Play the sound
