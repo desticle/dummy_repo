@@ -1,3 +1,6 @@
-function hello(name){console.log("hello "+ name)
+export function add(a, b) {
+  return a + b;
 }
-hello("world")
+export function subtract(a, b) {
+  return a - b;
+}
