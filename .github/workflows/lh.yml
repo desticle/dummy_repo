@@ -1,5 +1,6 @@
 name: Lighthouse CI Audit
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: ['pages-build-deployment']
     types:
@@ -10,6 +11,8 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for GitHub Pages to go live
+        run: sleep 60
       - uses: actions/checkout@v4
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
