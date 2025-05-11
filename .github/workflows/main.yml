@@ -22,6 +22,11 @@ jobs:
       - name: Generate JSDoc
         if: success()
         run: npx jsdoc -c jsdoc.json
+      - name: Deploy site + docs
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: .
 
   validate-html:
     name: Validate HTML
