@@ -1,3 +1,3 @@
 # dummy_repo
-(expose)[expose.html]
-(explore)[explore.html]
+[expose](expose.html)
+[explore](explore.html)
