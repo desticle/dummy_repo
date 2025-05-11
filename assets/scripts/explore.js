@@ -3,8 +3,8 @@
 window.addEventListener('DOMContentLoaded', init);
 
 /**
- * 
- * 
+ *
+ *
  */
 function init() {
   const textToSpeakTextarea = document.getElementById('text-to-speak');
