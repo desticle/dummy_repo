@@ -27,12 +27,21 @@ jobs:
         run: sudo apt-get install -y jq
       - name: Validate HTML files using W3C API
         run: |
+          failed=0
           for file in $(find . -name "*.html"); do
             echo "Validating $file"
-            curl -s -F "file=@$file;type=text/html" https://validator.w3.org/nu/?out=json | \
-            jq -e '.messages | length == 0' && echo "✅ $file is valid" || (echo "❌ $file has errors" && exit 1)
+            response=$(curl -s -F "file=@$file;type=text/html" https://validator.w3.org/nu/?out=json)
+            messages=$(echo "$response" | jq '.messages | length')
+            if [ "$messages" -eq 0 ]; then
+              echo "✅ $file is valid"
+            else
+              echo "❌ $file has $messages issue(s):"
+              echo "$response" | jq -r '.messages[] | "- [\(.type)] \(.message) at line \(.lastLine // "unknown")"'
+              failed=1
+            fi
           done
-          
+          exit $failed
+
   validate-css:
     name: Validate CSS
     runs-on: ubuntu-latest
@@ -42,11 +51,20 @@ jobs:
         run: sudo apt-get install -y jq
       - name: Validate CSS files using W3C API
         run: |
+          failed=0
           for file in $(find . -name "*.css"); do
             echo "Validating $file"
-            curl -s -F "file=@$file;type=text/css" https://jigsaw.w3.org/css-validator/validator?output=soap12 | \
-            grep -q "<m:errorcount>0</m:errorcount>" && echo "✅ $file is valid" || (echo "❌ $file has errors" && exit 1)
+            response=$(curl -s -F "file=@$file;type=text/css" "https://jigsaw.w3.org/css-validator/validator?output=json")
+            errors=$(echo "$response" | jq '.cssvalidation.errors')
+            if [ "$errors" = "[]" ]; then
+              echo "✅ $file is valid"
+            else
+              echo "❌ $file has errors:"
+              echo "$errors" | jq -r '.[] | "- [error] \(.message) at line \(.line // "unknown")"'
+              failed=1
+            fi
           done
+          exit $failed
 
   tests:
     name: Unit Tests with Jest
