@@ -22,11 +22,17 @@ jobs:
       - name: Generate JSDoc
         if: success()
         run: npx jsdoc -c jsdoc.json
-      - name: Deploy
+      - name: Convert README to index.html
+        run: |
+          mkdir -p public
+          npx markdown-to-html README.md > public/index.html
+      - name: Copy other HTML pages
+        run: cp *.html public/
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: . # Deploy from the repo root
+          publish_dir: ./public
 
   validate-html:
     name: Validate HTML
