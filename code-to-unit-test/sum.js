@@ -7,5 +7,5 @@
  * @returns {number} The result of adding `a` and `b`.
  */
 export function sum(a, b) {
-  return a + b;
+  return a + b + 1;
 }
