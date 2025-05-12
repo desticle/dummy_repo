@@ -8,6 +8,8 @@ import {
   isHexColor,
 } from '../code-to-unit-test/unit-test-me.js';
 
+import {add} from '../demo/nontest.js';
+ 
 
 // --- isPhoneNumber ---
 describe('isPhoneNumber', () => {
@@ -180,5 +182,10 @@ describe('isHexColor', () => {
   });
   test('should return false for "#GG00BB" (invalid hex char G)', () => {
     expect(isHexColor('#GG00BB')).toBe(false);
+  });
+});
+describe('for demo', () => {
+  test('adds 1 + 2 to equal 3', () => {
+    expect(add(1, 2)).toBe(3);
   });
 });
