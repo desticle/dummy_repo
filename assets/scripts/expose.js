@@ -2,6 +2,10 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
+/**
+ *
+ *
+ */
 function init() {
   // Get the dropdown menu (for selecting horn type)
   const hornSelect = document.getElementById('horn-select');
@@ -28,7 +32,7 @@ function init() {
   // TODO: Add event listeners and handling logic
 
   // Add 'change' event listener for the horn selection dropdown
-  hornSelect.addEventListener('change', function() {
+  hornSelect.addEventListener('change', function () {
     const selectedHorn = hornSelect.value; // Get the currently selected horn value
 
     // Update image and audio based on selection
@@ -49,7 +53,7 @@ function init() {
 
   // Implement volume slider functionality
   // Add 'input' event listener for the volume slider
-  volumeSlider.addEventListener('input', function() {
+  volumeSlider.addEventListener('input', function () {
     const volumeValue = parseInt(volumeSlider.value); // Get slider value (0-100)
     let iconPath = 'assets/icons/';
 
@@ -64,7 +68,7 @@ function init() {
       iconPath += 'volume-level-3.svg';
     }
     volumeIcon.src = iconPath;
-    volumeIcon.alt = `Volume level ${Math.ceil(volumeValue / 33) -1 < 0 ? 0 : Math.ceil(volumeValue / 33) -1}`; // Generate appropriate alt text
+    volumeIcon.alt = `Volume level ${Math.ceil(volumeValue / 33) - 1 < 0 ? 0 : Math.ceil(volumeValue / 33) - 1}`; // Generate appropriate alt text
 
     // Update audio element volume (slider is 0-100, audio.volume is 0.0-1.0)
     audioElement.volume = volumeValue / 100;
@@ -72,7 +76,7 @@ function init() {
 
   // Implement play sound button functionality
   // Add 'click' event listener for the play sound button
-  playButton.addEventListener('click', function() {
+  playButton.addEventListener('click', function () {
     // Ensure a horn is selected and audio source is set
     if (audioElement.src && hornSelect.value !== 'select') {
       audioElement.play(); // Play the sound
@@ -88,3 +92,5 @@ function init() {
     }
   });
 }
+
+// trigger new workflow with eslint

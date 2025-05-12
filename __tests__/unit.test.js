@@ -8,6 +8,9 @@ import {
   isHexColor,
 } from '../code-to-unit-test/unit-test-me.js';
 
+import {add} from '../demo/nontest.js';
+ 
+
 // --- isPhoneNumber ---
 describe('isPhoneNumber', () => {
   // True cases
@@ -68,7 +71,6 @@ describe('isPhoneNumber', () => {
     expect(isPhoneNumber('123-456-789')).toBe(false);
   });
 });
-
 
 // --- isEmail ---
 describe('isEmail', () => {
@@ -139,7 +141,6 @@ describe('isStrongPassword', () => {
   });
 });
 
-
 // --- isDate ---
 // Regex: /^\d{1,2}\/\d{1,2}\/\d{4}$/
 // XX/XX/YYYY where XX can be 1 or 2 digits, YYYY is 4 digits.
@@ -181,5 +182,10 @@ describe('isHexColor', () => {
   });
   test('should return false for "#GG00BB" (invalid hex char G)', () => {
     expect(isHexColor('#GG00BB')).toBe(false);
+  });
+});
+describe('for demo', () => {
+  test('adds 1 + 2 to equal 3', () => {
+    expect(add(1, 2)).toBe(3);
   });
 });
